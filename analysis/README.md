@@ -1,19 +1,11 @@
 # RADET - Analysis
 
-This folder contains notebooks and scripts for analyzing the performance of the [RADET model](https://github.com/DRI-RAD/radet-beta).
+This folder contains scripts and notebooks for analyzing the performance of the [RADET model](https://github.com/DRI-RAD/radet-beta).
 
-## Notebooks
+## Subfolders
 
-- [runtime_comparison.ipynb](runtime_comparison.ipynb) — Compare runtimes of OpenET models (single Landsat image benchmark)
-
-## Scripts
-
-- [eecu_analysis.py](eecu_analysis.py) — Analyze Earth Engine Compute Unit (EECU) usage across OpenET models
-
-## Data
-
-- **eecu_data/** — Raw EECU input data
-- **eecu_output/** — Generated EECU analysis results and runtime comparison outputs
+- [analysis_R/](analysis_R/) — R scripts for merging flux/OpenET/RADET data and generating daily, monthly, and map figures used in [Kim et al. (2026)](https://doi.org/10.31223/X51B4P).
+- [runtime_analysis/](runtime_analysis/) — Python scripts and notebooks for comparing runtimes and Earth Engine Compute Unit (EECU) usage across OpenET models.
 
 ## References
 

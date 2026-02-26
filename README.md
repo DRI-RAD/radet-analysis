@@ -33,10 +33,19 @@ radet-analysis/
 │   └── utils.py
 ├── analysis/
 │   ├── README.md
-│   ├── runtime_comparison.ipynb
-│   ├── eecu_analysis.py
-│   ├── eecu_data/         # Raw EECU input data
-│   └── eecu_output/       # Generated analysis results and plots
+│   ├── analysis_R/        # R scripts for data merging and figure generation
+│   │   ├── README.md
+│   │   ├── 1_merge_data.r
+│   │   ├── 2_daily_figures.R
+│   │   ├── 3_merge_data_monthly.r
+│   │   ├── 4_monthly_figures.R
+│   │   └── 5_KGE_improve_map.R
+│   └── runtime_analysis/  # Runtime and EECU analysis
+│       ├── README.md
+│       ├── runtime_comparison.ipynb
+│       ├── eecu_analysis.py
+│       ├── eecu_data/     # Raw EECU input data
+│       └── eecu_output/   # Generated analysis results and plots
 ├── .gitignore
 ├── LICENSE
 └── README.md
