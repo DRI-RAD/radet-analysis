@@ -1,11 +1,9 @@
-# RADET Examples
+# RADET - Analysis
 
-This folder contains example notebooks and scripts demonstrating RADET model usage and related analyses.
+This folder contains notebooks and scripts for analyzing the performance of the [RADET model](https://github.com/DRI-RAD/radet-beta).
 
 ## Notebooks
 
-- [radet_single_image.ipynb](radet_single_image.ipynb) — Compute RADET for a single Landsat image
-- [radet_collection_interpolate.ipynb](radet_collection_interpolate.ipynb) — Build a RADET image collection and interpolate
 - [runtime_comparison.ipynb](runtime_comparison.ipynb) — Compare runtimes of OpenET models (single Landsat image benchmark)
 
 ## Scripts
