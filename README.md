@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-green)](LICENSE)
 [![GEE](https://img.shields.io/badge/Google%20Earth%20Engine-4285F4?logo=google-earth&logoColor=white)](https://earthengine.google.com/)
 [![EarthArXiv Preprint](https://img.shields.io/badge/EarthArXiv-10.31223%2FX51B4P-blue)](https://doi.org/10.31223/X51B4P)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18225226.svg)](https://doi.org/10.5281/zenodo.18225226)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18225224.svg)](https://doi.org/10.5281/zenodo.18225224)
 
 This repository contains analysis scripts for the **RADET model (Radiation Advection Diffusivity-independent Evapotranspiration)**, a Google Earth Engine-based approach for estimating actual evapotranspiration (ET) ([Kim et al., 2026](https://doi.org/10.31223/X51B4P)). For full model documentation, design details, input requirements, and supported collections, see the [radet-beta](https://github.com/DRI-RAD/radet-beta) repository.
 
