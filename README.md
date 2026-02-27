@@ -15,22 +15,10 @@ The `analysis/` folder contains the following:
 - [runtime_comparison.ipynb](analysis/runtime_comparison.ipynb) — Compare runtimes of OpenET models
 - [eecu_analysis.py](analysis/eecu_analysis.py) — Analyze Earth Engine Compute Unit (EECU) usage across OpenET models
 
-## Note on RADET Code
-
-The `radet/` directory in this repository is cloned from [https://github.com/DRI-RAD/radet-beta](https://github.com/DRI-RAD/radet-beta). This duplicated code will be removed once a standalone Python package is published.
-
 ## Project Structure
 
 ```
 radet-analysis/
-├── radet/                 # Cloned from https://github.com/DRI-RAD/radet-beta
-│   ├── __init__.py        #   (will be removed once a Python package is published)
-│   ├── collection.py
-│   ├── image.py
-│   ├── interpolate.py
-│   ├── landsat.py
-│   ├── model.py
-│   └── utils.py
 ├── analysis/
 │   ├── README.md
 │   ├── analysis_R/        # R scripts for data merging and figure generation
@@ -51,10 +39,9 @@ radet-analysis/
 └── README.md
 ```
 
-## Dependencies
+## Python Dependencies
 
-- [earthengine-api](https://github.com/google/earthengine-api) # main RADET model dependency
-- [openet-core](https://pypi.org/project/openet-core/) # main RADET model dependency
+- [radet-beta](https://github.com/DRI-RAD/radet-beta) # main RADET model dependency
 - [openet-sims](https://pypi.org/project/openet-sims/) # Only for runtime comparisons ([runtime_comparison.ipynb](analysis/runtime_comparison.ipynb))
 - [openet-ssebop](https://pypi.org/project/openet-ssebop/) # Only for runtime comparisons ([runtime_comparison.ipynb](analysis/runtime_comparison.ipynb))
 - [openet-ptjpl](https://pypi.org/project/openet-ptjpl/) # Only for runtime comparisons ([runtime_comparison.ipynb](analysis/runtime_comparison.ipynb))
@@ -65,8 +52,25 @@ radet-analysis/
 
 ## Installation
 
-```
-pip install earthengine-api openet-core pandas seaborn openet-sims openet-ptjpl openet-ssebop openet-disalexi openet-geesebal
+### 1. Download and Install Anaconda/Miniconda
+
+Either [Anaconda](https://www.anaconda.com/products/individual) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html) is required for managing Python packages (Python >= 3.10 recommended).
+
+**Windows users:** After installation, open Anaconda Prompt and run `conda init powershell` to add conda to PowerShell.
+
+**Linux/Mac users:** Ensure conda is added to your PATH (typically automatic). Restart your shell if needed.
+
+Update conda: `conda update conda`
+
+### 2. Create the Conda Environment
+
+Create and activate a new conda environment:
+
+```bash
+conda create -y -n radet-analysis python=3.12
+conda activate radet-analysis
+pip install git+https://github.com/DRI-RAD/radet-beta.git
+pip install pandas notebook seaborn openet-sims openet-ssebop openet-ptjpl openet-geesebal openet-disalexi
 ```
 
 ### Google Earth Engine Authentication
@@ -84,6 +88,16 @@ This project uses the Google Earth Engine (GEE) Python API for geospatial data e
 
 See the [Earth Engine Python installation guide](https://developers.google.com/earth-engine/guides/python_install) for details.
 
+## R Dependencies
+Install the following packages before running the R scripts in [analysis_R](analysis/analysis_R/):
+
+```r
+install.packages(c(
+  "tidyverse", "stringr", "lubridate", "Metrics", "hydroGOF",
+  "ggpubr", "cowplot", "ggpmisc", "readr", "sf", "ggplot2",
+  "rnaturalearth", "rnaturalearthdata", "ggspatial", "tigris", "scales"
+))
+```
 ## References
 
 Kim, Y., Huntington, J. L., Comini de Andrade, B., Johnson, M. S., Volk, J. M., Majumdar, S., Morton, C., & ReVelle, P. (2026). Thermodynamically constrained surface energy balance using medium-resolution remote sensing for efficient evapotranspiration mapping. *EarthArXiv (preprint)*. [https://doi.org/10.31223/X51B4P](https://doi.org/10.31223/X51B4P)
